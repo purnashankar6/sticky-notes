@@ -1,5 +1,6 @@
 import { useEffect , useState } from "react";
 import StickIt from "./StickIt";
+import { findPlace } from "../utils";
 
 const Notes = (props) =>{
     const [initialized, setInitialized] = useState(false);
@@ -20,14 +21,8 @@ const Notes = (props) =>{
         setInitialized(true);
         localStorage.setItem("notes",JSON.stringify(updatedNotes))
       },[])
-      function findPlace(){
-            const maxX = Math.floor(Math.random()*(window.innerWidth - 250));
-            const maxY = Math.floor(Math.random()*(window.innerHeight - 250));
-            return{
-            x:maxX,
-            y:maxY
-            }
-        }
+     
+        console.log(notes)
     return(
         <div>
             {initialized && notes.map((note)=>{

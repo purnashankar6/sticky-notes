@@ -23,7 +23,7 @@ const StickIt = (props) =>{
             const newX = prevValue.x+diffX
             const newY = prevValue.y+diffY
             const rightX = Math.max(0,Math.min(newX, window.innerWidth-250))
-            const rightY = Math.max(0,Math.min(newY, window.innerHeight-250)) 
+            const rightY = Math.max(0,Math.min(newY, window.innerHeight-100)) 
 
             return{
                 x:rightX,
@@ -58,6 +58,7 @@ const StickIt = (props) =>{
         left:`${positions.x}px`,
         top:`${positions.y}px`,
         width:"200px",
+        
         border: "black 1px solid",
        // cursor:"move",
         cursor: isDraging ? 'grabbing' : 'grab',
